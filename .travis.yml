@@ -29,6 +29,7 @@ matrix:
 before_install:
   - mysql -e 'CREATE DATABASE IF NOT EXISTS yii2project_test;'
   - sudo apt-get -y install git zip php5-cli php5-curl
+  - export no_proxy=.github.com,.getcomposer.org
 
 before_script:
   - composer self-update
