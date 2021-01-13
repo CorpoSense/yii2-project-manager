@@ -35,5 +35,5 @@ before_script:
   - composer install --no-interaction --prefer-dist
 
 script:
-  - tests/bin/yii serve &
+  - ./yii migrate/up all
   - vendor/bin/codecept run
