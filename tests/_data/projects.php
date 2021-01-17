@@ -3,27 +3,17 @@
 return [
     [
         'id' => 1,
-        'title' => 'First Post',
-        'text' => 'First Post Text',
-        'status' => 1,
-        'created_at' => 1457211600,
-        'updated_at' => 1457211600,
+        'title' => 'First Projects',
+        'body' => 'First Projects Text',
     ],
     [
         'id' => 2,
-        'title' => 'Old Title For Updating',
-        'text' => 'Old Text For Updating',
-        'status' => 1,
-        'created_at' => 1457211600,
-        'updated_at' => 1457211600,
+        'title' => 'Old Projects For Updating',
+        'body' => 'Old Projects For Updating',
     ],
     [
         'id' => 3,
-        'title' => 'Title For Deleting',
-        'text' => 'Text For Deleting',
-        'status' => 1,
-        'created_at' => 1457211600,
-        'updated_at' => 1457211600,
+        'title' => 'Projects For Deleting',
+        'body' => 'Projects For Deleting',
     ],
 ];
- 
