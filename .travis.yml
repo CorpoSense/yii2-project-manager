@@ -3,12 +3,19 @@ os:
   - linux
 dist: trusty
 php:
+  # - '5.4'
   - '5.6'
   - '7.1'
 
 # Database service
 services:
+  # - postgresql
   - mysql
+
+# In case of issue with xdebug
+# env:
+#     global:
+#         - XDEBUG_MODE=coverage
 
 # Email notifications (https://docs.travis-ci.com/user/notifications/)
 notifications:
@@ -27,7 +34,8 @@ matrix:
     - php: 7.1
 
 before_install:
-  - mysql -e 'CREATE DATABASE IF NOT EXISTS yii2project_test;'
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS todo_test;'
+  # - psql -c 'create database todo_test;' -U postgres
   - sudo apt-get -y install git zip php5-cli php5-curl
 
 before_script:
@@ -35,5 +43,7 @@ before_script:
   - composer install --no-interaction --prefer-dist
 
 script:
-  - ./tests/bin/yii migrate --interactive=0
-  - vendor/bin/codecept run
+  # - psql -c "SELECT version();"
+  - tests/bin/yii serve &
+  # - vendor/bin/codecept run functional
+  - vendor/bin/codecept run --coverage --coverage-html
